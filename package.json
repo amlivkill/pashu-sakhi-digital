@@ -1,0 +1,16 @@
+{
+    "name": "pashu-sakhi-digital",
+    "version": "1.0.0",
+    "description": "Digital livestock service reporting tool for Pashu Sakhis",
+    "scripts": {
+        "dev": "npx http-server ./ -p 8080",
+        "start": "npx http-server ./ -p 8080"
+    },
+    "keywords": [
+        "pwa",
+        "livestock",
+        "sakhi"
+    ],
+    "author": "Change Tech Lab",
+    "license": "ISC"
+}

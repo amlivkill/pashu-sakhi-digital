@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pashu Sakhi Digital Companion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4a90e2">
+    <meta name="description" content="Digital Companion for Pashu Sakhis - ReAP Rudraprayag">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <button
+        onclick="localStorage.clear(); sessionStorage.clear(); if(window.caches){caches.keys().then(ns=>ns.forEach(n=>caches.delete(n)));} if(navigator.serviceWorker){navigator.serviceWorker.getRegistrations().then(regs=>regs.forEach(r=>r.unregister()));} setTimeout(()=>location.reload(true), 500);"
+        style="position:fixed; top:2px; left:2px; z-index:10000; background:red; color:white; border:none; padding:5px 10px; font-size:12px; border-radius:5px; font-weight:bold; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+        RESET & UPDATE (रिसेट)
+    </button>
+    <div id="app">
+        <!-- Notification / Toast Container -->
+        <div id="toast-container"></div>
+
+        <!-- Offline Indicator -->
+        <div id="offline-indicator" class="hidden">
+            You are currently offline. Data will sync when online.
+        </div>
+
+        <!-- Main Content Area -->
+        <main id="main-content">
+            <!-- Content will be injected here by app.js -->
+            <div class="loading-screen">
+                <div class="spinner"></div>
+                <p>Loading Pashu Sakhi Digital...</p>
+            </div>
+        </main>
+
+        <!-- Navigation Bar (Hidden on Login) -->
+        <nav id="bottom-nav" class="hidden">
+            <button class="nav-item active" data-target="dashboard">
+                <span class="icon home-icon">🏠</span>
+                <span class="label">Home</span>
+            </button>
+            <button class="nav-item" data-target="history">
+                <span class="icon history-icon">📋</span>
+                <span class="label">History</span>
+            </button>
+            <button class="nav-item" data-target="sync">
+                <span class="icon sync-icon">🔄</span>
+                <span class="label">Sync</span>
+            </button>
+            <button class="nav-item" data-target="profile">
+                <span class="icon profile-icon">👤</span>
+                <span class="label">Profile</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Scripts - Added version for cache busting -->
+    <script src="js/services/MasterData.js?v=1.3"></script>
+    <script src="js/services/db.js?v=1.3"></script>
+    <script src="js/services/seeder.js?v=1.3"></script>
+    <script src="js/services/gps.js?v=1.3"></script>
+    <script src="js/services/sync.js?v=1.3"></script>
+    <script src="js/i18n.js?v=1.3"></script>
+
+    <script src="js/components/Login.js?v=1.3"></script>
+    <script src="js/components/Dashboard.js?v=1.3"></script>
+    <script src="js/components/TreatmentForm.js?v=1.3"></script>
+    <script src="js/components/ActivityForm.js?v=1.3"></script>
+    <script src="js/components/History.js?v=1.3"></script>
+    <script src="js/components/VODashboard.js?v=1.3"></script>
+    <script src="js/components/AdminDashboard.js?v=1.3"></script>
+    <script src="js/components/ProductForm.js?v=1.3"></script>
+    <script src="js/components/Profile.js?v=1.3"></script>
+
+    <!-- PDF Lib -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
+
+    <script src="js/app.js?v=1.3"></script>
+    <script>
+        /* Service Worker disabled for aggressive testing
+        if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('SW Registered', reg))
+                    .catch(err => console.log('SW Failed', err));
+            });
+        }
+        */
+    </script>
+</body>
+
+</html>
