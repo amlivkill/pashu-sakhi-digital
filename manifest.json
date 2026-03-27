@@ -1,0 +1,32 @@
+{
+  "id": "com.reap.pashusakhiapp",
+  "name": "Pashu Sakhi Digital Companion",
+  "short_name": "Pashu Sakhi",
+  "description": "Digital livestock service reporting tool for Pashu Sakhis",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f8fafc",
+  "theme_color": "#4f46e5",
+  "lang": "hi",
+  "dir": "ltr",
+  "categories": [
+    "medical",
+    "business",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
