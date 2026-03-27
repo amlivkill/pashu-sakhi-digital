@@ -131,18 +131,24 @@ window.BlockDashboard = function (user, navigateTo) {
         }
     };
 
-    setTimeout(() => {
-        loadReports();
-        
+    const attachBlockListeners = () => {
         // Block Filter Listeners
         document.querySelectorAll('.block-filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 currentBlockFilter = e.target.dataset.block;
                 // Re-render the whole thing to update active button
                 document.getElementById('main-content').innerHTML = render();
-                setTimeout(loadReports, 0);
+                setTimeout(() => {
+                    loadReports();
+                    attachBlockListeners(); // Re-attach after re-render
+                }, 0);
             });
         });
+    };
+
+    setTimeout(() => {
+        loadReports();
+        attachBlockListeners();
     }, 100);
 
     return render();
