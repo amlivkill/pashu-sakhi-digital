@@ -28,30 +28,21 @@ window.Login = function (onLoginSuccess) {
 
                     <div class="form-group">
                         <label class="form-label" for="mobile-input">Phone / मोबाइल</label>
-                        <input type="tel" id="mobile-input" class="form-input" value="8650864393" maxlength="10" />
+                        <input type="tel" id="mobile-input" class="form-input" placeholder="Enter mobile number" maxlength="10" />
                     </div>
                     
                     <div class="form-group">
                         <label class="form-label" for="password-input">Password / पासवर्ड</label>
-                        <input type="password" id="password-input" class="form-input" value="1234" />
+                        <input type="password" id="password-input" class="form-input" placeholder="Enter password" />
                     </div>
 
                     <button id="btn-login" class="btn btn-primary" style="padding: 1rem; width:100%; margin-bottom:10px;">
                          LOGIN / लॉगिन
                     </button>
-
-                    <button id="btn-bypass" class="btn" style="background:#eee; font-size:11px; padding:5px; width:100%; margin-bottom:10px;">
-                        System Bypass (Direct Admin)
-                    </button>
-
-                    <button id="btn-simulate-sync" class="btn" style="background:var(--secondary-color); color:white; font-size:11px; padding:10px; width:100%;">
-                        🚀 Run 15 Pashu Sakhi Sync Simulation
-                    </button>
                 </div>
             </div>
 
             <div class="text-center mt-6">
-                <p class="text-xs text-secondary">Quick Pass: 1234</p>
                 <button onclick="localStorage.clear(); if(window.caches){caches.keys().then(ns=>ns.forEach(n=>caches.delete(n)));} location.reload(true);" 
                         class="btn" style="background:none; color:red; font-size:12px; text-decoration:underline;">
                     Not working? Click here to Reset / रिसेट
