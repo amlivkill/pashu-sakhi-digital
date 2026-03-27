@@ -134,10 +134,12 @@ function init() {
     window.addEventListener('offline', updateOnlineStatus);
     updateOnlineStatus();
 
-    // Seed Sample Data
+    // Seed Sample Data (Disabled for Fresh Start)
+    /*
     if (window.Seeder) {
         window.Seeder.init();
     }
+    */
 }
 
 function updateOnlineStatus() {

@@ -35,17 +35,7 @@ window.VODashboard = function (user, navigateTo) {
                 listContainer.innerHTML = `
                 <div class="text-center p-8 bg-gray-50 rounded-xl">
                     <p class="text-secondary mb-4">No pending approvals found.</p>
-                    <button id="btn-seed-manual" class="btn" style="background:#eee; font-size:12px;">
-                        Load Test Reports (Seeding)
-                    </button>
                 </div>`;
-
-                document.getElementById('btn-seed-manual')?.addEventListener('click', async () => {
-                    if (window.Seeder) {
-                        await window.Seeder.init();
-                        navigateTo('dashboard');
-                    }
-                });
                 return;
             }
 
